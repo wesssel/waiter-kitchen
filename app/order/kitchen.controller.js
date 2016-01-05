@@ -9,7 +9,7 @@ function kitchenController(orders, $firebaseObject, FirebaseUrl){
     
     kitchenCtrl.doneOrder = function(order){
         order.done = true;
-        getRef(order.$id).update({ done: true});
+        getRef(order.$id).update({done: true});
     }
     
     kitchenCtrl.deleteOrder = function(order){

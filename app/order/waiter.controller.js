@@ -8,6 +8,7 @@ function waiterController(orders){
     waiterCtrl.order = orders;
     
 	waiterCtrl.createOrder = function(order){
+        if(!waiterCtrl.table){ return }
 		waiterCtrl.order.$add({
             name: order.name,
             table: waiterCtrl.table,

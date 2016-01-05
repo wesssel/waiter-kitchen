@@ -3,7 +3,11 @@
         <h1 class="text-center">{{waiter.message}}</h1>
     </div>
     <div class="large-12 columns">
-        <input type="text" ng-model="waiter.table" placeholder="Table number" />
+        <input type="number" ng-model="waiter.table" placeholder="Table number" />
+        <div data-alert class="alert-box alert" ng-show="!waiter.table">
+            Please fill in table number
+            <a href="#" class="close" >&times;</a>
+        </div>
     </div>
     <div class="large-6 columns">
         <ul>
