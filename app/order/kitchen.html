@@ -5,7 +5,12 @@
     <div class="large-12 columns">
         <ul>
             <li ng-repeat="order in kitchen.orders | orderBy: 'timestamp' ">
-                {{order.timestamp | date: 'HH:mm:ss' }} - <span>{{order.name}}</span>
+                <a href="" ng-click="kitchen.doneOrder(order)" ng-class="{done: order.done}">
+                    Table {{order.table}}: {{order.timestamp | date: 'HH:mm:ss' }} - {{order.name}}
+                </a>
+                <span ng-show="order.done"> 
+                   <a href="" ng-click="kitchen.deleteOrder(order)"> X</a>
+                </span>
             </li>
         </ul>
     </div>

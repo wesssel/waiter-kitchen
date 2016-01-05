@@ -10,6 +10,7 @@ function waiterController(orders){
 	waiterCtrl.createOrder = function(order){
 		waiterCtrl.order.$add({
             name: order.name,
+            table: waiterCtrl.table,
             timestamp: Firebase.ServerValue.TIMESTAMP
         })
 	};
