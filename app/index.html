@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Angular Start</title>
+    <link rel="stylesheet" href="css/app.min.css" />
+
+    <!-- angular --> 
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/firebase/firebase.js"></script>
+    <script src="vendor/angularfire/dist/angularfire.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
+  </head>
+  <body>
+
+    <ui-view></ui-view>    
+
+    <!-- app -->
+    <script src="app.js"></script>
+
+    <!-- controllers -->
+    <script src="order/waiter.controller.js"></script>
+    <script src="order/order.service.js"></script>
+    <script src="order/kitchen.controller.js"></script>
+    
+  </body>
+</html>

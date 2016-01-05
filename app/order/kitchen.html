@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="large-12 columns">
+        <h1 class="text-center">{{kitchen.message}}</h1>
+    </div>
+    <div class="large-12 columns">
+        <ul>
+            <li ng-repeat="order in kitchen.orders | orderBy: 'timestamp' ">
+                {{order.timestamp | date: 'HH:mm:ss' }} - <span>{{order.name}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
