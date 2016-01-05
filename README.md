@@ -16,7 +16,7 @@ Realtime restaurant application made with Angular and Firebase
 ## Start
   
   * Type in command line: `gulp`
-  * Type in browser `localhost:3000`
+  * Type in browser `localhost:1375`
   
-  * Push order: `localhost:3000`
-  * Pull order: `localhost:3000/#/kitchen` 
+  * Push order: `localhost:1375`
+  * Pull order: `localhost:1375/#/kitchen` 
