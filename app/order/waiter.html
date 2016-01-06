@@ -1,15 +1,22 @@
 <div class="row">
     <div class="large-12 columns">
-        <h1 class="text-center">{{waiter.message}}</h1>
+        <h1 class="text-center">Waiter interface</h1>
     </div>
-    <div class="large-12 columns">
+    <div class="large-6 columns">
+        <h2>Make orders</h2>
+        <label>Table number</label>
         <input type="number" ng-model="waiter.table" placeholder="Table number" />
         <div data-alert class="alert-box alert" ng-show="!waiter.table">
             Please fill in table number
             <a href="#" class="close" >&times;</a>
         </div>
-    </div>
-    <div class="large-6 columns">
+        <h3>Drinks</h3>
+        <ul>
+            <li ng-repeat="drink in waiter.menu.drinks">
+                <a href="#" ng-click="waiter.createOrder(drink)">{{drink.name}} - {{drink.price | currency}}</a>
+            </li>
+        </ul>
+        <h3>Food</h3>
         <ul>
             <li ng-repeat="food in waiter.menu.foods">
                 <a href="#" ng-click="waiter.createOrder(food)">{{food.name}} - {{food.price | currency}}</a>
@@ -17,9 +24,13 @@
         </ul>
     </div>
     <div class="large-6 columns">
+        <h2>Ready orders</h2>
         <ul>
-            <li ng-repeat="drink in waiter.menu.drinks">
-                <a href="#" ng-click="waiter.createOrder(drink)">{{drink.name}} - {{drink.price | currency}}</a>
+            <li ng-repeat="order in waiter.orders | orderBy: '-done' " ng-show="order.done">
+                {{order.done | date: 'HH:mm:ss' }}: Table {{order.table}} - {{order.name}}
+                <span> 
+                   <a href="" ng-click="waiter.deleteOrder(order)"> X</a>
+                </span>
             </li>
         </ul>
     </div>

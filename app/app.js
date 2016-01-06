@@ -5,7 +5,7 @@ angular.module('app', ['firebase', 'ui.router'])
 	.state('waiter', {
 		url: '/',
 		templateUrl: 'order/waiter.html',
-		controller: 'waiterController as waiter',
+		controller: 'orderController as waiter',
         resolve: {
           orders: function (Orders) {
             return Orders.$loaded();
@@ -15,7 +15,7 @@ angular.module('app', ['firebase', 'ui.router'])
 	.state('kitchen', {
 		url: '/kitchen',
 		templateUrl: 'order/kitchen.html',
-		controller: 'kitchenController as kitchen',
+		controller: 'orderController as kitchen',
         resolve: {
           orders: function (Orders) {
             return Orders.$loaded();
